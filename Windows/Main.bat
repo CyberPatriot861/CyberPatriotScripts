@@ -56,8 +56,8 @@ goto:EOF
 
 :lsp
 echo Setting password policy...
-::Set account lockout to 5, min length to 8, max age to 30, min age to 1, and history to 5
-net accounts /lockoutthreshold:5 /MINPWLEN:8 /MAXPWAGE:30 /MINPWAGE:1 /UNIQUEPW:5 
+::Set account lockout to 5, min length to 8, max age to 30, min age to 7, and history to 5
+net accounts /lockoutthreshold:5 /MINPWLEN:8 /MAXPWAGE:30 /MINPWAGE:7 /UNIQUEPW:5 
 echo Set password policy: Password policy must meet complexity to enable
 echo Set password policy: Store passwords using reversible encryption to disabled
 start secpol.msc /wait
@@ -307,9 +307,9 @@ echo Renamed Administrator to "Dude" and Guest to "LameDude"
 goto:EOF
 
 :passwords
-echo Making passwords expire, and setting password to: CyberPatriot1
+echo Making passwords expire, and setting password to: Defen08!
 for /f "tokens=*" %%a in ('type %path%resources\users.txt') do (
-	net user "%%a" "CyberPatriot1"
+	net user "%%a" "Defen08!"
 	C:\Windows\System32\wbem\wmic UserAccount where Name="%%a" set PasswordExpires=True
 )
 echo Made passwords expire, and set passwords
