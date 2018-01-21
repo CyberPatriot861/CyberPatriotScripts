@@ -231,12 +231,12 @@ if %errorlevel%==1 echo Run processes failed to write
 goto MENU
 :Three
 echo "OUTPUT DONE, CHANGING PASSWORD POLICIES!"
-REM Passwords must be 10 digits
-net accounts /minpwlen:10
+REM Passwords must be 8 digits
+net accounts /minpwlen:8
 REM Passwords must be changed every 30 days
 net accounts /maxpwage:30
-REM Passwords can only be changed after 1 day has passed
-net accounts /minpwage:1
+REM Passwords can only be changed after 10 day has passed
+net accounts /minpwage:10
 REM Display current password policy
 echo "CURRENT POLICY"
 PAUSE
