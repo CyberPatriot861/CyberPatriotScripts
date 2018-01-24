@@ -216,7 +216,8 @@ reg ADD HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v UseMachineId /t REG_DWORD /
 goto MENU
 :Two
 REM Listing possible penetrations
-cd C:\
+mkdir C:\fileoutputs
+cd C:\fileoutputs
 echo "STARTING TO OUTPUT PROCESS FILES DIRECTLY TO THE C:\ DRIVE!"
 wmic process list brief > BriefProcesses.txt
 if %errorlevel%==1 echo Brief Processes failed to write
